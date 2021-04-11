@@ -10,3 +10,12 @@
   padding: 20px;
   text-align: center;
 }
+
+.container main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.box {
+  cursor: pointer;
+}
