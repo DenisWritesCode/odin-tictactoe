@@ -33,6 +33,11 @@ reset.addEventListener("click", (e) => {
   for (let i = 0; i < board.length; ++i) {
     buttons[i].innerText = board[i];
   }
+
+  // Enable the buttons.
+  buttons.forEach((button) => {
+    button.disabled = false;
+  });
 });
 
 // Controls the flow of the board.
@@ -59,8 +64,25 @@ function GameFlow(square) {
     else return false;
   };
 
+  function checkTie() {
+    // Loop over every square. If at least one is a number, return false.
+    // If we get to end of loop, return true.
+    for (let i = 0; i < buttons.length; ++i) {
+      if (Number(buttons[i].innerText)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   function updateTurn(turn) {
     turnDisplay.innerText = game.turn;
+  }
+
+  function disableButtons() {
+    buttons.forEach((button) => {
+      button.disabled = true;
+    });
   }
 
   const gameWon = (turn) => {
@@ -68,6 +90,12 @@ function GameFlow(square) {
       gameState.classList.remove("hidden");
       turnParagraph.classList.add("hidden");
       gameState.innerText = `${turn} won the game`;
+      disableButtons();
+    } else if (checkTie()) {
+      gameState.classList.remove("hidden");
+      turnParagraph.classList.add("hidden");
+      gameState.innerText = "Issa tie!";
+      disableButtons();
     }
   };
 
