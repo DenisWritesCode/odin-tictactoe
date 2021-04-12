@@ -12,19 +12,25 @@
   </head>
   <body>
     <div class="container">
-      <header>
-        <p>Header</p>
-      </header>
       <main>
-        <p class="box" id="1">1</p>
-        <p class="box" id="2">2</p>
-        <p class="box" id="3">3</p>
-        <p class="box" id="4">4</p>
-        <p class="box" id="5">5</p>
-        <p class="box" id="6">6</p>
-        <p class="box" id="7">7</p>
-        <p class="box" id="8">8</p>
-        <p class="box" id="9">9</p>
+        <div class="head">
+          <p class="gameWon hidden"></p>
+          <p class="state">Turn: <span class="turn">x</span></p>
+          <div class="resetGame">
+            <button class="reset">Reset Game</button>
+          </div>
+        </div>
+        <div class="board">
+          <button class="box" id="1">1</button>
+          <button class="box" id="2">2</button>
+          <button class="box" id="3">3</button>
+          <button class="box" id="4">4</button>
+          <button class="box" id="5">5</button>
+          <button class="box" id="6">6</button>
+          <button class="box" id="7">7</button>
+          <button class="box" id="8">8</button>
+          <button class="box" id="9">9</button>
+        </div>
       </main>
     </div>
     <footer>
