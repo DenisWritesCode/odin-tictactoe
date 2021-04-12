@@ -11,11 +11,20 @@
   text-align: center;
 }
 
-.container main {
+.box {
+  cursor: pointer;
+}
+
+main .head {
+  display: flex;
+  justify-content: space-around;
+}
+
+main .board {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
 
-.box {
-  cursor: pointer;
+.hidden {
+  display: none;
 }
